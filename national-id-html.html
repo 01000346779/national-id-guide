@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل تصوير بطاقة الرقم القومي</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #c5cae9 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1976d2 0%, #3f51b5 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #bbdefb;
+            font-size: 16px;
+        }
+        
+        .progress-bar {
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #666;
+        }
+        
+        .progress-track {
+            width: 100%;
+            height: 12px;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2196f3 0%, #3f51b5 100%);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+        
+        .content {
+            padding: 40px;
+            min-height: 400px;
+            text-align: center;
+        }
+        
+        .icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .step-title {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .step-description {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .details-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #ede7f6 100%);
+            border: 2px solid #2196f3;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: right;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: start;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #444;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        .detail-number {
+            min-width: 30px;
+            height: 30px;
+            background: #2196f3;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .navigation {
+            background: #f5f5f5;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #ddd;
+        }
+        
+        .nav-button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-button:not(:disabled) {
+            background: #2196f3;
+            color: white;
+        }
+        
+        .nav-button:not(:disabled):hover {
+            background: #1976d2;
+            box-shadow: 0 5px 15px rgba(33,150,243,0.4);
+            transform: translateY(-2px);
+        }
+        
+        .nav-button:disabled {
+            background: #ccc;
+            color: #888;
+            cursor: not-allowed;
+        }
+        
+        .dots {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .dot.active {
+            background: #2196f3;
+            width: 30px;
+            border-radius: 10px;
+        }
+        
+        .dot:hover {
+            background: #999;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .fade-enter {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>دليل تصوير بطاقة الرقم القومي</h1>
+            <p>إدارة عمليات الموارد البشرية</p>
+        </div>
+        
+        <div class="progress-bar">
+            <div class="progress-info">
+                <span id="step-counter">الخطوة 1 من 8</span>
+                <span id="progress-percent">13%</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+        
+        <div class="content" id="content">
+            <!-- المحتوى سيتم تحديثه بواسطة JavaScript -->
+        </div>
+        
+        <div class="navigation">
+            <button class="nav-button" id="prev-btn" onclick="prevStep()">
+                ← السابق
+            </button>
+            
+            <div class="dots" id="dots">
+                <!-- النقاط سيتم إنشاؤها بواسطة JavaScript -->
+            </div>
+            
+            <button class="nav-button" id="next-btn" onclick="nextStep()">
+                التالي →
+            </button>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>شكراً لحسن تعاونكم • إدارة الموارد البشرية</p>
+    </div>
+
+    <script>
+        const steps = [
+            {
+                title: "مرحباً بك في دليل تصوير بطاقة الرقم القومي",
+                icon: "💳",
+                description: "سنوضح لك الخطوات المطلوبة لتصوير وإرسال مستندات بطاقة الرقم القومي",
+                details: []
+            },
+            {
+                title: "الخطوة 1: تصوير وجه البطاقة",
+                icon: "📱",
+                description: "قم بتصوير الوجه الأمامي للبطاقة",
+                details: [
+                    "استخدم كاميرا الموبايل أو جهاز الاسكانر",
+                    "تأكد من وضوح الصورة",
+                    "احفظ الملف بصيغة JPG",
+                    "اسم الملف مثال: احمد_محمد_وجه.jpg"
+                ]
+            },
+            {
+                title: "الخطوة 2: تصوير ظهر البطاقة",
+                icon: "🔄",
+                description: "قم بتصوير الوجه الخلفي للبطاقة",
+                details: [
+                    "استخدم نفس الجهاز للتصوير",
+                    "تأكد من وضوح جميع البيانات",
+                    "احفظ الملف بصيغة JPG",
+                    "اسم الملف مثال: احمد_محمد_ظهر.jpg"
+                ]
+            },
+            {
+                title: "الخطوة 3: تصوير الصورة الشخصية",
+                icon: "👤",
+                description: "قم بتصوير صورة شخصية حديثة",
+                details: [
+                    "التقط صورة شخصية واضحة",
+                    "يفضل أن تكون بخلفية فاتحة",
+                    "احفظ الملف بصيغة JPG",
+                    "اسم الملف مثال: احمد_محمد_صورة.jpg"
+                ]
+            },
+            {
+                title: "الخطوة 4: إنشاء مجلد باسمك",
+                icon: "📁",
+                description: "ضع جميع الملفات في مجلد واحد",
+                details: [
+                    "أنشئ مجلد جديد على الكمبيوتر",
+                    "سمّ المجلد باسمك الكامل",
+                    "مثال: احمد_محمد_علي",
+                    "ضع الملفات الثلاثة داخل المجلد"
+                ]
+            },
+            {
+                title: "الخطوة 5: إرسال الملفات بالبريد الإلكتروني",
+                icon: "📧",
+                description: "أرسل المجلد إلى أحد العناوين التالية",
+                details: [
+                    "SAMIRGHONIM629@GMAIL.COM",
+                    "GAAA@menofia.edu.eg",
+                    "أرفق المجلد كاملاً في البريد",
+                    "اكتب اسمك في عنوان الرسالة"
+                ]
+            },
+            {
+                title: "البديل: في حالة عدم توفر الإمكانيات",
+                icon: "📄",
+                description: "يمكنك طباعة الصور وإرسالها ورقياً",
+                details: [
+                    "اطبع وجه البطاقة في صفحة",
+                    "اطبع ظهر البطاقة في صفحة أخرى",
+                    "ألصق صورة شخصية حديثة مع البطاقة",
+                    "أرسلها للإدارة العامة للموارد البشرية"
+                ]
+            },
+            {
+                title: "تم! شكراً لاتباعك التعليمات",
+                icon: "✅",
+                description: "لقد أتممت جميع الخطوات المطلوبة",
+                details: [
+                    "تأكد من إرسال جميع الملفات",
+                    "راجع أن الملفات واضحة ومقروءة",
+                    "في حال وجود أي استفسار تواصل مع الإدارة",
+                    "شكراً لتعاونك"
+                ]
+            }
+        ];
+
+        let currentStep = 0;
+
+        function renderStep() {
+            const step = steps[currentStep];
+            const content = document.getElementById('content');
+            
+            let detailsHTML = '';
+            if (step.details.length > 0) {
+                detailsHTML = '<div class="details-box">';
+                step.details.forEach((detail, index) => {
+                    detailsHTML += `
+                        <div class="detail-item" style="animation-delay: ${index * 0.1}s">
+                            <div class="detail-number">${index + 1}</div>
+                            <div>${detail}</div>
+                        </div>
+                    `;
+                });
+                detailsHTML += '</div>';
+            }
+            
+            content.innerHTML = `
+                <div class="fade-enter">
+                    <div class="icon">${step.icon}</div>
+                    <h2 class="step-title">${step.title}</h2>
+                    <p class="step-description">${step.description}</p>
+                    ${detailsHTML}
+                </div>
+            `;
+            
+            updateProgress();
+            updateNavigation();
+            updateDots();
+        }
+
+        function updateProgress() {
+            const progress = ((currentStep + 1) / steps.length) * 100;
+            document.getElementById('progress-fill').style.width = progress + '%';
+            document.getElementById('step-counter').textContent = `الخطوة ${currentStep + 1} من ${steps.length}`;
+            document.getElementById('progress-percent').textContent = Math.round(progress) + '%';
+        }
+
+        function updateNavigation() {
+            document.getElementById('prev-btn').disabled = currentStep === 0;
+            document.getElementById('next-btn').disabled = currentStep === steps.length - 1;
+        }
+
+        function updateDots() {
+            const dotsContainer = document.getElementById('dots');
+            dotsContainer.innerHTML = '';
+            steps.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.className = 'dot' + (index === currentStep ? ' active' : '');
+                dot.onclick = () => goToStep(index);
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        function nextStep() {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                renderStep();
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                renderStep();
+            }
+        }
+
+        function goToStep(index) {
+            currentStep = index;
+            renderStep();
+        }
+
+        // Initialize
+        renderStep();
+    </script>
+</body>
+</html>
